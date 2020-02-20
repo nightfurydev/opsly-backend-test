@@ -27,6 +27,7 @@ dependencies {
 	testImplementation("io.projectreactor:reactor-test")
 	testImplementation("com.squareup.okhttp3:mockwebserver:4.4.0")
 	testImplementation("com.squareup.okhttp3:okhttp:4.4.0")
+	testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
 }
 
 tasks.withType<Test> {
