@@ -1,3 +1,23 @@
+## Run instructions:
+
+To run an application run the following command:
+
+```
+./gradlew bootRun
+```
+
+Then, test it with the following command:
+
+```
+curl localhost:3000
+```
+
+To run tests (both unit and integration) run the following command:
+
+```
+./gradlew test
+```
+
 ## Your mission:
 
 A client needs to know what is happening on the social networks. All of them. Right now.
