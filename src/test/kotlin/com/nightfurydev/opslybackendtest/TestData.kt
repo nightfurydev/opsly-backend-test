@@ -9,14 +9,19 @@ object TestData {
         FacebookMessage(name = "test", status = "test status"),
         FacebookMessage(name = "test2", status = "new status")
     )
+    val statuses = facebookMessages.map { it.status }
+
     val twitterMessages = listOf(
         TwitterMessage(username = "test", tweet = "some tweet"),
         TwitterMessage(username = "test2", tweet = "another tweet"),
         TwitterMessage(username = "test3", tweet = "new tweet")
     )
+    val tweets = twitterMessages.map { it.tweet }
+
     val instagramMessages = listOf(
         InstagramMessage(username = "test", picture = "Test Forest"),
         InstagramMessage(username = "test2", picture = "Delicious Food"),
         InstagramMessage(username = "test3", picture = "Nothing interesting")
     )
+    val pictures = instagramMessages.map { it.picture }
 }

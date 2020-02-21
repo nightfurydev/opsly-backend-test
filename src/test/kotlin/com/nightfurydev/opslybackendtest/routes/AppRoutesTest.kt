@@ -55,9 +55,9 @@ class AppRoutesTest {
             .expectBody<AggregatedMessages>()
             .isEqualTo(
                 AggregatedMessages(
-                    TestData.facebookMessages,
-                    TestData.twitterMessages,
-                    TestData.instagramMessages
+                    TestData.statuses,
+                    TestData.tweets,
+                    TestData.pictures
                 )
             )
     }
@@ -80,8 +80,8 @@ class AppRoutesTest {
             .isEqualTo(
                 AggregatedMessages(
                     emptyList(),
-                    TestData.twitterMessages,
-                    TestData.instagramMessages
+                    TestData.tweets,
+                    TestData.pictures
                 )
             )
     }
@@ -103,9 +103,9 @@ class AppRoutesTest {
             .expectBody<AggregatedMessages>()
             .isEqualTo(
                 AggregatedMessages(
-                    TestData.facebookMessages,
+                    TestData.statuses,
                     emptyList(),
-                    TestData.instagramMessages
+                    TestData.pictures
                 )
             )
     }
@@ -127,8 +127,8 @@ class AppRoutesTest {
             .expectBody<AggregatedMessages>()
             .isEqualTo(
                 AggregatedMessages(
-                    TestData.facebookMessages,
-                    TestData.twitterMessages,
+                    TestData.statuses,
+                    TestData.tweets,
                     emptyList()
                 )
             )

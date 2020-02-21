@@ -32,7 +32,10 @@ class Handler(val client: SocialNetworkClient,
         val instagram = client.getMessages(urls.instagram, InstagramMessage::class.java).subscribeOn(Schedulers.elastic())
 
         return Mono.zip(facebook, twitter, instagram)
-            .flatMap { Mono.just(AggregatedMessages(it.t1, it.t2, it.t3)) }
+            .flatMap { tuple -> Mono.just(AggregatedMessages(
+                facebook = tuple.t1.map { it.status },
+                twitter = tuple.t2.map { it.tweet },
+                instagram = tuple.t3.map { it.picture })) }
             .doAfterTerminate {
                 logger.info("Messages retrieved!")
             }
